@@ -1,0 +1,125 @@
+/* ===================== BODY E TÍTULOS ===================== */
+body{
+  background:black;
+  color:white;
+  text-align:center;
+  font-family:Arial, sans-serif;
+  margin:0;
+  padding:0;
+  overflow-y: scroll;  /* barra de rolagem vertical */
+  overflow-x: hidden;  /* sem rolagem horizontal */
+  height:100%;
+}
+
+.titulo{
+  font-size:70px;
+  animation: brilho 2s infinite alternate;
+}
+
+.nome{
+  font-size:50px;
+  color:pink;
+}
+
+/* ===================== CARTA ===================== */
+.carta{
+  width:90%;
+  max-width:400px;
+  margin:50px auto;
+  padding:20px;
+  background:white;
+  color:black;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.5);
+  cursor:pointer;
+}
+
+.mensagem{
+  font-size:18px;
+  display:none; /* só aparece após clicar na carta */
+  margin-top:10px;
+}
+
+/* FOTO DENTRO DA CARTA */
+.foto{
+  width:100%;       /* ocupa toda a largura da carta */
+  height:auto;      /* mantém proporção */
+  margin-top:10px;
+  border-radius:10px;
+  display:block;
+  object-fit:contain; /* garante que não corte a imagem */
+}
+
+/* ===================== ANIMAÇÕES ===================== */
+@keyframes brilho{
+  from{ text-shadow:2px 2px 5px white; }
+  to{ text-shadow:5px 5px 20px white; }
+}
+
+/* ===================== BOLO ===================== */
+.bolo{
+  font-size:120px;
+  margin-top:20px;
+  animation: subir 2s infinite alternate;
+}
+
+@keyframes subir{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-20px); }
+}
+
+/* ===================== CONFETES ===================== */
+.confete{
+  width:10px;
+  height:10px;
+  position:absolute;
+  top:-10px;
+  border-radius:50%;
+  animation:cair linear infinite;
+}
+
+.confete:nth-child(1){ left:5%; background:red; animation-duration:4s; }
+.confete:nth-child(2){ left:10%; background:yellow; animation-duration:5s; }
+.confete:nth-child(3){ left:15%; background:blue; animation-duration:4.5s; }
+.confete:nth-child(4){ left:20%; background:green; animation-duration:6s; }
+.confete:nth-child(5){ left:25%; background:pink; animation-duration:4s; }
+.confete:nth-child(6){ left:30%; background:orange; animation-duration:5.5s; }
+.confete:nth-child(7){ left:35%; background:purple; animation-duration:4s; }
+.confete:nth-child(8){ left:40%; background:white; animation-duration:6s; }
+.confete:nth-child(9){ left:45%; background:cyan; animation-duration:4.5s; }
+.confete:nth-child(10){ left:50%; background:magenta; animation-duration:5s; }
+/* adicione mais confetes se quiser */
+
+@keyframes cair{
+  0%{ transform: translateY(-10px) rotate(0deg);}
+  100%{ transform: translateY(100vh) rotate(360deg);}
+}
+
+/* ===================== FOGOS ===================== */
+.fogo{
+  font-size:60px;
+  position:absolute;
+  display:none;
+  animation: subirFogo 1s ease-out forwards;
+}
+
+@keyframes subirFogo{
+  0%{ transform:translateY(0) scale(0); opacity:1; }
+  100%{ transform:translateY(-200px) scale(1.5); opacity:0; }
+}
+
+/* ===================== BARRA DE ROLAGEM ESTILIZADA ===================== */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff69b4; /* rosa */
+  border-radius: 6px;
+  border: 3px solid #222;
+}
